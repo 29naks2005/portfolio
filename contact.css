@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #ff6584;
+    --accent-color: #43dde6;
+    --bg-color: #f8f9fc;
+    --card-bg: #ffffff;
+    --text-dark: #2d3436;
+    --text-light: #636e72;
+    --gradient-text: linear-gradient(45deg, #6c63ff, #ff6584, #43dde6);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease-in-out;
+}
 
 * {
     margin: 0;
@@ -8,14 +22,22 @@
 }
 
 body {
-    background: #f0f2f5;
-    background-image: radial-gradient(#bfc9d6 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
 }
 
 .contact-container {
@@ -25,20 +47,19 @@ body {
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
+    background: #ffffff;
     width: 100%;
     max-width: 420px;
-    border-radius: 30px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #eee;
     overflow: hidden;
-    transition: transform 0.4s ease;
+    transition: var(--transition);
 }
 
 .contact-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
 }
 
 .contact-card-content {
@@ -47,16 +68,13 @@ body {
 
 h1 {
     font-size: 2.5rem;
-    color: #1a1a1a;
+    color: var(--text-dark);
     margin-bottom: 10px;
-    letter-spacing: -1px;
-    background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 700;
 }
 
 .intro-text {
-    color: #666;
+    color: var(--text-light);
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 35px;
@@ -72,34 +90,38 @@ h1 {
     display: flex;
     align-items: center;
     padding: 15px;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: none;
+    border: 1px solid transparent;
+    transition: var(--transition);
     cursor: pointer;
 }
 
 .detail-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    border-color: #eee;
+    box-shadow: var(--shadow-sm);
+    transform: none;
+    /* Removed scale transform */
 }
 
 .detail-item .icon {
     width: 40px;
     height: 40px;
-    background: #eff2f5;
-    border-radius: 12px;
+    background: #e9ecef;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
+    color: var(--text-dark);
     font-size: 1.1rem;
     margin-right: 15px;
-    transition: 0.3s;
+    transition: var(--transition);
 }
 
 .detail-item:hover .icon {
-    background: #1a1a1a;
+    background: var(--text-dark);
     color: #fff;
 }
 
@@ -107,13 +129,13 @@ h1 {
     display: flex;
     flex-direction: column;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--text-dark);
     font-weight: 600;
 }
 
 .detail-text .label {
     font-size: 0.7rem;
-    color: #999;
+    color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 2px;
@@ -129,7 +151,7 @@ h1 {
 
 .social-links a {
     display: block;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: var(--transition);
 }
 
 .social-links img {
@@ -137,9 +159,8 @@ h1 {
     height: 45px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    filter: grayscale(5%) opacity(0.7);
-    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
 }
 
 .social-links a:hover {
@@ -147,6 +168,5 @@ h1 {
 }
 
 .social-links a:hover img {
-    filter: grayscale(0%) opacity(1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-lg);
 }
